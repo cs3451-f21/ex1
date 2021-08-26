@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>P2: events</title>
+    <link rel="stylesheet" type="text/css" href="../app.css" media="screen" />
+    <meta charset="UTF-8">
+</head>
+<body >
+    <div background-color="blue" id="drawing">
+        <h1>A silly demo!</h1>
+        <p id="text"></p>
+    </div>
+    <script>
+        var textDiv = document.getElementById("text");
+        textDiv.innerText = "some text"
+
+        textDiv.onmousedown = (ev) => {
+            // this method is called when a mouse button is pressed.
+            textDiv.innerText = "some OTHER text"
+            ev.stopPropagation()
+        }
+                
+        document.body.onmousedown = (ev) => {
+            // this method is called when a mouse button is pressed.
+            textDiv.innerText = "back to some text"
+        }
+
+    </script>
+</body>
+</html>

@@ -37,7 +37,7 @@ class Drawing {
     // relative to the Window, but we want to specify draw coordinates
     // relative to the canvas DOM element  
     // see: http://www.jacklmoore.com/notes/mouse-position/
-    static offset(e: MouseEvent): ps.MousePosition {
+    static offset(e: MouseEvent): MousePosition {
         e = e || <MouseEvent> window.event;
 
         var target = <Element> (e.target || e.srcElement),
